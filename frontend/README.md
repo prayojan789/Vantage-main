@@ -1,302 +1,206 @@
-# 🇳🇵 Vantage — Nepal News Intelligence Dashboard
+# Vantage — Frontend
 
 <div align="center">
 
-### **A Modern Frontend Dashboard for Intelligent News Analysis & Visualization**
+### **React + Vite dashboard for AI-powered news intelligence and media bias analysis**
 
-*Transforming Nepal's news landscape into interactive insights through modern UI, data visualization, and scalable frontend architecture.*
+*Interactive workspace for exploring news event clusters, entity sentiment, and cross-publisher bias across Nepal's leading English press outlets.*
 
 <br>
 
-![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge\&logo=react\&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3-38BDF8?style=for-the-badge\&logo=tailwindcss\&logoColor=white)
-![Axios](https://img.shields.io/badge/Axios-Latest-5A29E4?style=for-the-badge\&logo=axios\&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-6-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
+![Recharts](https://img.shields.io/badge/Recharts-2-22B5BF?style=for-the-badge&logo=recharts&logoColor=white)
 
 </div>
 
 ---
 
-## 📖 About
+## Overview
 
-**Vantage** is a modern frontend dashboard concept that reimagines how users explore and understand news. Rather than presenting information as a traditional news feed, Vantage delivers meaningful insights through interactive charts, intelligent visualizations, and a clean user experience.
+Vantage's frontend is a single-page application that serves as the intelligence workspace. It communicates with the FastAPI backend via REST endpoints and provides:
 
-Built using modern frontend technologies, the application demonstrates scalable architecture, reusable UI components, responsive layouts, and production-ready design principles. It is currently powered by mock data, allowing the interface to function independently while remaining ready for future backend integration.
-
-This project showcases frontend engineering skills with an emphasis on performance, maintainability, and exceptional user experience.
-
----
-
-# ✨ Features
-
-### 📊 Interactive Dashboard
-
-* Modern analytics overview
-* News statistics
-* Interactive charts
-* Trending event visualization
-* Dynamic summary cards
-
-### 📰 News Feed
-
-* Beautiful article listing
-* Event categorization
-* Source information
-* Responsive card layout
-
-### 🔍 Smart Search & Filters
-
-* Search news articles
-* Filter by source
-* Filter by category
-* Sort content efficiently
-
-### 📈 Data Visualization
-
-* Sentiment charts
-* Trend analytics
-* Category distribution
-* Interactive graphs
-
-### ⚖️ Bias Analysis Interface
-
-* Media comparison UI
-* Bias indicators
-* Credibility visualization
-* Analytical reports
-
-### 🎨 Premium User Experience
-
-* Fully responsive layout
-* Smooth animations
-* Clean dashboard interface
-* Modern typography
-* Accessible color palette
+- **Live news feed dashboard** — clustered event intelligence with real-time metrics
+- **Comparison tools** — side-by-side headline and coverage comparison across publishers
+- **Entity sentiment analysis** — track sentiment toward politicians, organizations, and institutions
+- **Media bias detection** — cross-publisher bias dashboards with visual indicators
+- **AI playground** — run aspect-based sentiment analysis on custom text
+- **Knowledge graph** — explore relationships between entities, publishers, and events
 
 ---
 
-# 🚀 Tech Stack
+## Tech Stack
 
-| Category    | Technology     |
-| ----------- | -------------- |
-| Framework   | React 18       |
-| Build Tool  | Vite 5         |
-| Styling     | Tailwind CSS 3 |
-| Charts      | Recharts       |
-| Icons       | Lucide React   |
-| HTTP Client | Axios          |
-| Routing     | React Router   |
-| Language    | JavaScript     |
+| Category        | Technology                           |
+|-----------------|--------------------------------------|
+| Framework       | React 18                             |
+| Build Tool      | Vite 5                               |
+| Styling         | Tailwind CSS 3 + CSS custom properties|
+| Charts          | Recharts 2                           |
+| Icons           | Lucide React                         |
+| HTTP Client     | Axios (with JWT interceptor)         |
+| Routing         | React Router 6                       |
+| Animation       | Framer Motion 12                     |
+| Auth            | JWT-based (localStorage + Axios interceptor) |
+| Language        | JavaScript (JSX)                     |
 
 ---
 
-# 📂 Project Structure
+## Project Structure
 
-```text
-vantage/
-│
-├── public/
-│
+```
+frontend/
+├── public/                    # Static assets
 ├── src/
-│   ├── assets/
+│   ├── app/                   # App shell & route definitions
 │   ├── components/
-│   ├── data/
-│   ├── hooks/
-│   ├── layouts/
-│   ├── pages/
-│   ├── services/
-│   ├── utils/
-│   ├── App.jsx
-│   └── main.jsx
-│
+│   │   ├── layout/           # Sidebar, NavRail, TopBar, MobileNav, Footer
+│   │   └── ui/               # Button, Badge, Avatar, Alert, Progress, etc.
+│   ├── hooks/                # Custom hooks
+│   ├── layouts/              # AppLayout, AuthLayout, PageContainer, PanelLayout
+│   ├── lib/                  # Axios API client, utility functions
+│   ├── pages/                # Route-level page components
+│   ├── providers/            # AuthProvider, ThemeProvider
+│   ├── services/             # API service modules (articles, events, bias, etc.)
+│   ├── styles/               # Theme CSS (light/dark CSS custom properties)
+│   ├── tokens/               # Design tokens (colors, spacing, typography)
+│   └── utils/                # Helpers, config, mock data
+├── index.html
 ├── package.json
+├── postcss.config.js
+├── tailwind.config.js
 ├── vite.config.js
 └── README.md
 ```
 
 ---
 
-# 🚀 Getting Started
+## Getting Started
 
-## 1. Clone the Repository
+### Prerequisites
 
-```bash
-git clone https://github.com/YOUR_USERNAME/vantage.git
-```
+- Node.js 18+
+- npm or yarn
+- Backend server running on `http://localhost:8000` (see [backend README](../backend/README.md))
 
----
-
-## 2. Navigate to the Project
+### Setup
 
 ```bash
-cd vantage
-```
-
----
-
-## 3. Install Dependencies
-
-```bash
+# 1. Install dependencies
 npm install
-```
 
----
+# 2. (Optional) Set environment variables for the API base URL
+#    Default: http://localhost:8000/api/v1 (proxied via Vite)
+cp .env.example .env
 
-## 4. Start the Development Server
-
-```bash
+# 3. Start the development server
 npm run dev
 ```
 
-The application will start at:
+The app runs at **http://localhost:5173**.
 
-```text
-http://localhost:5173
-```
+> API requests to `/api/*` are proxied to `http://localhost:8000` by Vite's dev server. No CORS issues in development.
 
 ---
 
-# 📜 Available Scripts
+## Available Scripts
 
-| Command         | Description                  |
-| --------------- | ---------------------------- |
-| npm install     | Install project dependencies |
-| npm run dev     | Start development server     |
-| npm run build   | Build production version     |
-| npm run preview | Preview production build     |
-| npm run lint    | Run ESLint                   |
+| Command             | Description                         |
+|---------------------|-------------------------------------|
+| `npm run dev`       | Start the Vite development server   |
+| `npm run build`     | Build the production bundle         |
+| `npm run preview`   | Preview the production build        |
 
 ---
 
-# 💻 Running the Project
+## Backend Integration
 
-Vantage is a **frontend-only** application.
+This frontend is **not mock-only** — it communicates with a real FastAPI backend.
 
-No backend setup is required.
+### How it connects
 
-Simply execute:
+1. **API client** (`src/lib/api.js`) — Axios instance configured with `VITE_API_BASE_URL` (default: `/api/v1`)
+2. **Request interceptor** — automatically attaches JWT `Authorization: Bearer <token>` header from localStorage
+3. **Response interceptor** — unwraps the standardized `{ success, message, data }` response format and handles 401 errors (clears session, dispatches `auth:logout` event)
+4. **Auth flow** — stores JWT in `localStorage` under `vantage-access-token`; the `AuthProvider` reads it on mount to hydrate the session
 
-```bash
-npm install
+### Environment Variables
 
-npm run dev
-```
+| Variable              | Default                   | Description             |
+|-----------------------|---------------------------|-------------------------|
+| `VITE_API_BASE_URL`   | `/api/v1`                 | Backend API base path   |
 
-The application uses mock data and is fully functional out of the box.
-
----
-
-# 🔌 Backend Integration (Optional)
-
-The application has been designed with scalability in mind and can easily integrate with REST APIs in the future.
-
-To connect a backend:
-
-* Disable mock mode
-* Configure the API base URL
-* Enable CORS on the backend
-* Connect REST API endpoints
+In production, set `VITE_API_BASE_URL` to your deployed backend URL (e.g., `https://api.vantage.np/api/v1`).
 
 ---
 
-# 📷 Preview
+## Routing
 
-> Screenshots and live demo will be added in future releases.
-
----
-
-# 🎨 Design Philosophy
-
-Vantage follows modern dashboard design principles inspired by enterprise analytics platforms.
-
-### Core Principles
-
-* Clean and minimal interface
-* Responsive-first development
-* Reusable component architecture
-* High-performance rendering
-* Accessible UI
-* Consistent spacing system
-* Modern typography
-* Interactive user experience
-
----
-
-# 📱 Responsive Design
-
-Optimized for:
-
-* 💻 Desktop
-* 🖥️ Large Displays
-* 📱 Mobile Devices
-* 📲 Tablets
+| Path              | Page              | Auth Required |
+|-------------------|-------------------|---------------|
+| `/`               | Landing page      | No            |
+| `/sign-in`        | Sign In           | No            |
+| `/sign-up`        | Sign Up           | No            |
+| `/dashboard`      | Dashboard         | Yes           |
+| `/events`         | Event Clusters    | Yes           |
+| `/events/:id`     | Event Detail      | Yes           |
+| `/articles`       | Article Archive   | Yes           |
+| `/articles/:id`   | Article Detail    | Yes           |
+| `/compare`        | Compare Headlines | Yes           |
+| `/bias`           | Bias Dashboard    | Yes           |
+| `/publishers`     | Media Houses      | Yes           |
+| `/publishers/:id` | Publisher Profile | Yes           |
+| `/entities`       | Entity Sentiment  | Yes           |
+| `/analytics`      | Analytics         | Yes           |
+| `/graphs`         | Knowledge Graph   | Yes           |
+| `/playground`     | AI Playground     | Yes           |
+| `/live`           | Live Analysis     | Yes           |
+| `/insights`       | AI Insights       | Yes           |
+| `/search`         | Search            | Yes           |
+| `/notifications`  | Notifications     | Yes           |
+| `/settings`       | Settings          | Yes           |
 
 ---
 
-# 🛣️ Roadmap
+## App Layouts
 
-* ✅ Modern Dashboard
-* ✅ Responsive Layout
-* ✅ Interactive Charts
-* ✅ News Feed
-* ✅ Search & Filters
-* ✅ Mock Data Support
-* ⏳ Backend Integration
-* ⏳ Authentication
-* ⏳ Real-Time News Updates
-* ⏳ AI-Powered Insights
-* ⏳ Dark Mode
-* ⏳ Export Reports
+The app provides three layout modes configurable per-route:
+
+| Layout   | Description                                      |
+|----------|--------------------------------------------------|
+| `full`   | Top bar only — landing, auth, reports            |
+| `workspace` | Top bar + sidebar — main dashboard workspace |
+| `rail`   | Top bar + compact icon-only nav rail             |
+
+Layout is selected in `src/app/routes.jsx` via the `layout` metadata field.
 
 ---
 
-# 🤝 Contributing
+## Design System
 
-Contributions are welcome!
+Colors, spacing, typography, and elevation are defined in **CSS custom properties** under `:root` and `.dark` scopes in `src/styles/theme.css`. Design tokens are centrally managed in `src/tokens/theme.js`.
+
+Key principles:
+- Light mode + dark mode via `ThemeProvider`
+- Reusable component library in `src/components/ui/`
+- Consistent `--radius-md`, `--radius-lg`, `--color-brand-*` tokens
+- Backdrop blur for sticky headers
+- `card-elevated` utility for consistent card shadows
+
+---
+
+## Contributing
 
 1. Fork the repository
-
-2. Create a feature branch
-
-```bash
-git checkout -b feature/your-feature
-```
-
+2. Create a feature branch: `git checkout -b feature/your-feature`
 3. Commit your changes
-
-```bash
-git commit -m "Add your feature"
-```
-
-4. Push the branch
-
-```bash
-git push origin feature/your-feature
-```
-
+4. Push: `git push origin feature/your-feature`
 5. Open a Pull Request
 
 ---
 
-# 📄 License
+## License
 
-This project is licensed under the **MIT License**.
-
----
-
-# 👨‍💻 Author
-
-**Prayojan Puri**
-
-Software Engineering Student • Frontend Developer • Open Source Enthusiast
-
----
-
-<div align="center">
-
-### ⭐ If you found this project useful, consider giving it a Star!
-
-**Built with ❤️ using React, Vite & Tailwind CSS**
-
-</div>
+MIT
