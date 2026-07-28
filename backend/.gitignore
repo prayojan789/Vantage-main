@@ -1,0 +1,50 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Scrapy
+.scrapy/
+*.log
+
+# Data files — never commit raw data
+*.jsonl
+*.json
+*.csv
+
+# Database
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+.env.*
+
+# ML artifacts — models are too large for git
+*.pt
+*.pth
+*.bin
+*.ckpt
+checkpoints/
+models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# React / Next.js
+node_modules/
+.next/
+out/
+build/
+dist/
+*.log
+.eslintcache
+.vercel/

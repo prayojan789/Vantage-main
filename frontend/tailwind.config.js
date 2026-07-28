@@ -1,0 +1,40 @@
+import { designTokens } from './src/tokens/theme.js'
+
+export default {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
+  theme: {
+    extend: {
+      colors: {
+        bg: 'var(--color-bg)',
+        'bg-subtle': 'var(--color-bg-subtle)',
+        surface: 'var(--color-surface)',
+        'surface-muted': 'var(--color-surface-muted)',
+        'surface-elevated': 'var(--color-surface-elevated)',
+        'surface-sunken': 'var(--color-surface-sunken)',
+        'card-bg': 'var(--color-card-bg)',
+        'card-border': 'var(--color-card-border)',
+        text: 'var(--color-text)',
+        'text-muted': 'var(--color-text-muted)',
+        'text-subtle': 'var(--color-text-subtle)',
+        'text-inverse': 'var(--color-text-inverse)',
+        border: 'var(--color-border)',
+        'border-strong': 'var(--color-border-strong)',
+        'border-subtle': 'var(--color-border-subtle)',
+        primary: 'var(--color-brand-500)',
+        secondary: 'var(--color-brand-600)',
+        success: 'var(--color-success)',
+        warning: 'var(--color-warning)',
+        danger: 'var(--color-danger)',
+        info: 'var(--color-info)',
+      },
+      fontFamily: designTokens.typography.fontFamily,
+      spacing: designTokens.spacing,
+      borderRadius: designTokens.radius,
+      boxShadow: designTokens.shadows,
+      screens: designTokens.breakpoints,
+      transitionDuration: designTokens.motion.duration,
+      transitionTimingFunction: designTokens.motion.easing,
+    },
+  },
+  plugins: [],
+}

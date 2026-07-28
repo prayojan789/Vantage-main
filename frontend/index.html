@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Vantage — Nepal News Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <script>
+      (function () {
+        try {
+          var storageKey = 'vantage-theme'
+          var theme = window.localStorage.getItem(storageKey) || 'system'
+          var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          var resolvedTheme = theme === 'system' ? systemTheme : theme
+          var root = document.documentElement
+          root.dataset.theme = resolvedTheme
+          root.style.colorScheme = resolvedTheme
+        } catch (error) {
+          document.documentElement.dataset.theme = 'light'
+          document.documentElement.style.colorScheme = 'light'
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <meta name="description" content="Vantage is an AI-powered news intelligence platform for Nepali publishers, events, sentiment and media analysis." />
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
