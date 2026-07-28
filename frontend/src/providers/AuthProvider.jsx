@@ -122,9 +122,28 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
+  const signInWithGoogle = useCallback(async (idToken) => {
+    try {
+      const response = await api.post('/auth/google/token', { token: idToken })
+      if (response && response.access_token) {
+        const session = {
+          email: response.email,
+          full_name: response.full_name,
+          signedInAt: new Date().toISOString(),
+        }
+        setUser(session)
+        writeSession(session, response.access_token)
+        return { ok: true, user: session }
+      }
+      return { ok: false, error: 'Google sign-in failed.' }
+    } catch (err) {
+      return { ok: false, error: err.message || 'An error occurred during Google sign-in.' }
+    }
+  }, [])
+
   const value = useMemo(
-    () => ({ user, hydrated, signIn, signUp, signOut }),
-    [user, hydrated, signIn, signUp, signOut],
+    () => ({ user, hydrated, signIn, signUp, signOut, signInWithGoogle }),
+    [user, hydrated, signIn, signUp, signOut, signInWithGoogle],
   )
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
