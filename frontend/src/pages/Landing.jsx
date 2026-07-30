@@ -319,7 +319,6 @@ export default function Landing() {
             <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-white/80">Explore clustered events, compare publisher perspectives, analyze entity sentiment, and uncover media bias through one intelligent platform.</p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Button as={Link} to="/dashboard" size="lg" rightIcon={<ArrowRight size={16} />} className="bg-white text-[var(--color-brand-700)] hover:bg-white/90">Open the workspace</Button>
-              <Button as={Link} to="/playground" size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/20 hover:text-white btn-landing-playground">Try the AI playground</Button>
             </div>
           </div>
         </div>
