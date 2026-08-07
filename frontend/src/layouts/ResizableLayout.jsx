@@ -11,28 +11,7 @@ import {
 } from 'react'
 import { cn } from '../lib/utils.js'
 
-/**
- * ResizableLayout
- *
- * A two-pane resizable container. The first child becomes the primary
- * panel, the second child becomes the secondary panel, and a draggable
- * divider sits between them.
- *
- * - `direction="horizontal"` (default) splits the width.
- * - `direction="vertical"` splits the height.
- * - `defaultSize` and `minSize` are pixel values for the primary panel.
- * - `onResize` fires on every drag with the new primary size in pixels.
- *
- * The implementation is intentionally framework-free (no react-resizable-panels
- * dependency) so it can ship inside this layout system without adding
- * bundle weight.
- *
- * @example
- *   <ResizableLayout defaultSize={320} minSize={240} maxSize={520}>
- *     <Sidebar />
- *     <Main />
- *   </ResizableLayout>
- */
+
 function clamp(value, min, max) {
   if (Number.isNaN(value)) return min
   return Math.min(Math.max(value, min), max)

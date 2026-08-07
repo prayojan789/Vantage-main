@@ -28,7 +28,7 @@ export const PRIMARY_NAV = [
   { to: '/articles',  label: 'Article Archive',  icon: Newspaper,        group: 'workspace', description: 'All ingested articles' },
   { to: '/compare',   label: 'Compare Headlines',icon: GitCompareArrows, group: 'workspace', description: 'Side-by-side coverage comparison' },
 ]
-
+ 
 export const ANALYTICS_NAV = [
   { to: '/bias',       label: 'Bias Dashboard',     icon: BarChart3,  group: 'analytics', description: 'Comparative media bias analysis' },
   { to: '/publishers', label: 'Media Houses',       icon: Building2,  group: 'analytics', description: 'Per-publisher sentiment reports' },

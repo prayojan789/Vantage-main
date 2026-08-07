@@ -11,7 +11,7 @@ export const MOCK_EVENTS = {
     { id:'evt_004', title:'UML party congress concludes: KP Oli re-elected chair unanimously', date:'2025-06-06T11:00:00Z', article_count:3, sources:['The Kathmandu Post','Republica','Setopati English'], entities:['KP Oli','UML'], dominant_sentiment:'negative', similarity_score:0.91 },
     { id:'evt_005', title:"Nepal's GDP growth forecast revised upward by World Bank to 5.1%", date:'2025-06-05T09:00:00Z', article_count:2, sources:['My Republica','The Himalayan Times'], entities:['Finance Ministry','NRB'], dominant_sentiment:'positive', similarity_score:0.85 },
     { id:'evt_006', title:'Supreme Court ruling on electoral threshold sparks constitutional debate', date:'2025-06-04T14:00:00Z', article_count:3, sources:['The Kathmandu Post','Nepal Monitor','Setopati English'], entities:['Supreme Court','Election Commission','RSP'], dominant_sentiment:'neutral', similarity_score:0.88 },
-  ],
+   ],
 }
 
 export const MOCK_EVENT_DETAIL = {

@@ -5,7 +5,7 @@ const AuthContext = createContext(null)
 const STORAGE_KEY = 'vantage-auth-user'
 const TOKEN_KEY = 'vantage-access-token'
 
-function readSession() {
+function readSession() {      
   if (typeof window === 'undefined') return null
   try {
     const userRaw = window.localStorage.getItem(STORAGE_KEY)

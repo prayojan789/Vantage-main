@@ -72,7 +72,7 @@ function PublisherCard({ house, index }) {
 
   return (
     <article
-      className="card-elevated relative overflow-hidden anim-fade-up"
+      className="card-elevated relative overflow-hidden anim--up"
       style={{ animationDelay: `${index * 0.05}s` }}
     >
       <div className="h-1.5 w-full" style={{ background: `linear-gradient(90deg, ${color}, ${color}66)` }} />
@@ -81,7 +81,7 @@ function PublisherCard({ house, index }) {
         <header className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
             <SourceBadge name={house.name} size="md" />
-            <div>
+            <div>fade
               <h3 className="text-base font-bold text-[var(--text)]">{house.name}</h3>
               <p className="text-xs text-[var(--text-muted)]">{total} articles tracked · {negPct}% negative</p>
             </div>
